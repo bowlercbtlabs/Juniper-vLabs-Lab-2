@@ -12,6 +12,4 @@ Lab Steps:
 
 1) Login to vLabs and Reserve/Launch the Lab (should take a few minutes to start up)
     - https://jlabs.juniper.net/vlabs/portal/zones-policies/
-2) When setup is done, mouse over devices and power them on
-    - Commands > Power On
-3) 
+2) When setup is done, bring up 
