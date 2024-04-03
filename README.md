@@ -12,4 +12,14 @@ Lab Steps:
 
 1) Login to vLabs and Reserve/Launch the Lab (should take a few minutes to start up)
     - https://jlabs.juniper.net/vlabs/portal/zones-policies/
-2) When setup is done, bring up 
+2) When setup is done, login to the vSRX and do the following:
+
+jcluser@vSRX1# delete security policies from-zone trust to-zone trust policy default-permit 
+
+[edit]
+jcluser@vSRX1# delete security policies from-zone trust to-zone untrust policy default-permit 
+
+[edit]
+jcluser@vSRX1# delete security zones security-zone trust 
+
+
