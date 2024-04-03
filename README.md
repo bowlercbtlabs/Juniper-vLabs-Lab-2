@@ -22,4 +22,6 @@ jcluser@vSRX1# delete security policies from-zone trust to-zone untrust policy d
 [edit]
 jcluser@vSRX1# delete security zones security-zone trust 
 
-
+3) At this point we should only have the interfaces configured with IP addresses and no security policy
+4) Try to ping from host to host (vMX to vMX)
+5) 
