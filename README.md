@@ -82,7 +82,27 @@ Input packets:10 (0 pps)[1]
 Output packets:0 (0 pps)[0]
 
 
-9)  As we can see, traffic is making it into the interface, but we see no outbound traffic.
+9)  As we can see, traffic is making it into the interface, but we see no outbound traffic returning to the source.
 
-10)  
+10)  We can run the packet-drop records command on the vSRX to see if the firewall is dropping the packets
+
+jcluser@vSRX1> show security packet-drop records 
+
+19:49:13.052137:LSYS-ID-00 10.100.11.2/50206-->10.100.12.2/9;icmp,ipid-27717,ge-0/0/0.0,Dropped by FLOW:First path Invalid zone
+19:49:12.537753:LSYS-ID-00 10.100.11.2/50206-->10.100.12.2/8;icmp,ipid-24133,ge-0/0/0.0,Dropped by FLOW:First path Invalid zone
+19:49:12.027785:LSYS-ID-00 10.100.11.2/50206-->10.100.12.2/7;icmp,ipid-20293,ge-0/0/0.0,Dropped by FLOW:First path Invalid zone
+19:49:11.524291:LSYS-ID-00 10.100.11.2/50206-->10.100.12.2/6;icmp,ipid-15941,ge-0/0/0.0,Dropped by FLOW:First path Invalid zone
+19:49:11.035512:LSYS-ID-00 10.100.11.2/50206-->10.100.12.2/5;icmp,ipid-12101,ge-0/0/0.0,Dropped by FLOW:First path Invalid zone
+19:49:10.517509:LSYS-ID-00 10.100.11.2/50206-->10.100.12.2/4;icmp,ipid-8517,ge-0/0/0.0,Dropped by FLOW:First path Invalid zone
+19:49:10.008931:LSYS-ID-00 10.100.11.2/50206-->10.100.12.2/3;icmp,ipid-4165,ge-0/0/0.0,Dropped by FLOW:First path Invalid zone
+19:49:09.507837:LSYS-ID-00 10.100.11.2/50206-->10.100.12.2/2;icmp,ipid-65092,ge-0/0/0.0,Dropped by FLOW:First path Invalid zone
+19:49:09.006869:LSYS-ID-00 10.100.11.2/50206-->10.100.12.2/1;icmp,ipid-60996,ge-0/0/0.0,Dropped by FLOW:First path Invalid zone
+
+11)  As we can see, we are seeing traffic from host1 destined for host2 being blocked due to "Invalid Zone"
+
+12)  Lets add the 'Trust' security zone and put both ge-0/0/0 and ge-0/0/1 inside that zone
+
+
+
+13)  
 
