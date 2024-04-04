@@ -1,6 +1,5 @@
 **** vSRX 1 ****
 
-
 jcluser@vSRX1> show configuration | display set 
 set version 21.1R3.11
 set system host-name vSRX1
