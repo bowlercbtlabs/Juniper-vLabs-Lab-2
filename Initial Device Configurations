@@ -2,6 +2,20 @@ Initial Device Configurations
 
 **** vSRX1 ****
 
+1) Login to the vSRX1 and type "edit"
+2) This will put you into configuration mode, copy and paste the following commands:
+
+delete security policies from-zone trust to-zone trust policy default-permit
+delete security policies from-zone trust to-zone untrust policy default-permit
+delete security zones security-zone trust
+delete security zones security-zone untrust
+
+3) Type "commit and-quit"
+
+4) Peform the following command and verify your output looks similar to the configuration below "show configuration | display set"
+
+5) You are now ready to follow along and start the lab!
+
 jcluser@vSRX1> show configuration | display set 
 set version 21.1R3.11
 set system host-name vSRX1
