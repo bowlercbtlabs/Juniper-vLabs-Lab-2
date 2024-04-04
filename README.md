@@ -14,13 +14,10 @@ Lab Steps:
     - https://jlabs.juniper.net/vlabs/portal/zones-policies/
 2) When setup is done, login to the vSRX and do the following:
 
-jcluser@vSRX1# delete security policies from-zone trust to-zone trust policy default-permit 
-
-[edit]
-jcluser@vSRX1# delete security policies from-zone trust to-zone untrust policy default-permit 
-
-[edit]
-jcluser@vSRX1# delete security zones security-zone trust 
+delete security policies from-zone trust to-zone trust policy default-permit 
+delete security policies from-zone trust to-zone untrust policy default-permit 
+delete security zones security-zone trust
+delete security zones security-zone untrust 
 
 3) At this point we should only have the interfaces configured with IP addresses and no security policy
 4) Try to ping from host1 to host2 (vMX to vMX), both hosts are inside the trust zone
