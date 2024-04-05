@@ -143,18 +143,18 @@ set security policies from-zone trust to-zone trust policy ALLOW_ICMP then permi
 
 jcluser@vSRX1# show | compare 
 [edit security policies]
-+    from-zone trust to-zone trust {
-+        policy ALLOW_ICMP {
-+            match {
-+                source-address any;
-+                destination-address any;
-+                application junos-icmp-all;
-+            }
-+            then {
-+                permit;
-+            }
-+        }
-+    }
+   from-zone trust to-zone trust {
+       policy ALLOW_ICMP {
+           match {
+               source-address any;
+                destination-address any;
+               application junos-icmp-all;
+           }
+            then {
+               permit;
+           }
+       }
+    }
 
   
 15)  Lets try to ping again and see what happens
